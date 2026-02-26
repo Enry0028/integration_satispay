@@ -1,0 +1,124 @@
+{
+ "actions": [],
+ "allow_copy": 0,
+ "allow_guest_to_view": 0,
+ "allow_import": 0,
+ "allow_rename": 0,
+ "autoname": "field:payment_id",
+ "beta": 0,
+ "creation": "2025-01-02 00:00:00.000000",
+ "custom": 0,
+ "disable_preload": 0,
+ "docstatus": 0,
+ "doctype": "DocType",
+ "editable_grid": 0,
+ "engine": "InnoDB",
+ "fields": [
+  {
+   "fieldname": "payment_id",
+   "fieldtype": "Data",
+   "label": "Payment ID",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "external_code",
+   "fieldtype": "Data",
+   "label": "External Code",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "PENDING\nAUTHORIZED\nACCEPTED\nCANCELED\nFAILED",
+   "default": "PENDING"
+  },
+  {
+   "fieldname": "channel",
+   "fieldtype": "Select",
+   "label": "Channel",
+   "options": "kiosk\nwebapp\npos",
+   "default": "pos"
+  },
+  {
+   "fieldname": "amount_unit",
+   "fieldtype": "Int",
+   "label": "Amount (cents)"
+  },
+  {
+   "fieldname": "currency",
+   "fieldtype": "Data",
+   "label": "Currency"
+  },
+  {
+   "fieldname": "flow",
+   "fieldtype": "Data",
+   "label": "Flow"
+  },
+  {
+   "fieldname": "redirect_url",
+   "fieldtype": "Text",
+   "label": "Redirect URL"
+  },
+  {
+   "fieldname": "callback_url",
+   "fieldtype": "Text",
+   "label": "Callback URL"
+  },
+  {
+   "fieldname": "payload",
+   "fieldtype": "Long Text",
+   "label": "Order Payload"
+  },
+  {
+   "fieldname": "pos_invoice",
+   "fieldtype": "Link",
+   "label": "POS Invoice",
+   "options": "POS Invoice"
+  },
+  {
+   "fieldname": "last_synced_at",
+   "fieldtype": "Datetime",
+   "label": "Last Synced At"
+  }
+ ],
+ "field_order": [
+  "payment_id",
+  "external_code",
+  "status",
+  "channel",
+  "amount_unit",
+  "currency",
+  "flow",
+  "redirect_url",
+  "callback_url",
+  "payload",
+  "pos_invoice",
+  "last_synced_at"
+ ],
+ "links": [],
+ "modified": "2025-01-02 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Integration Satispay",
+ "name": "Satispay Payment",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

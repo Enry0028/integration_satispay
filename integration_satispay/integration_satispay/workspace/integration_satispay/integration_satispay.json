@@ -1,0 +1,34 @@
+{
+ "charts": [],
+ "content": "[{\"id\":\"header\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Satispay Pagamenti</b></span>\",\"col\":12}},{\"id\":\"shortcut\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Satispay Settings\",\"col\":4}}]",
+ "creation": "2026-01-02 00:00:00.000000",
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "hide_custom": 0,
+ "icon": "octicon octicon-credit-card",
+ "idx": 0,
+ "is_hidden": 0,
+ "is_standard": 1,
+ "label": "Integration Satispay",
+ "links": [],
+ "modified": "2026-01-02 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Build",
+ "name": "Integration Satispay",
+ "number_cards": [],
+ "owner": "Administrator",
+ "parent_page": "",
+ "public": 1,
+ "quick_lists": [],
+ "roles": [],
+ "sequence_id": 82,
+ "shortcuts": [
+  {
+   "color": "Orange",
+   "label": "Satispay Settings",
+   "link_to": "Satispay Settings",
+   "type": "DocType"
+  }
+ ],
+ "title": "Integration Satispay"
+}

@@ -1,0 +1,133 @@
+{
+ "actions": [],
+ "allow_copy": 0,
+ "allow_guest_to_view": 0,
+ "allow_import": 0,
+ "allow_rename": 0,
+ "autoname": "",
+ "beta": 0,
+ "creation": "2025-01-02 00:00:00.000000",
+ "custom": 0,
+ "disable_preload": 0,
+ "docstatus": 0,
+ "doctype": "DocType",
+ "editable_grid": 0,
+ "engine": "InnoDB",
+ "fields": [
+  {
+   "fieldname": "integration_section",
+   "fieldtype": "Section Break",
+   "label": "Integration"
+  },
+  {
+   "default": "0",
+   "fieldname": "enable_integration",
+   "fieldtype": "Check",
+   "label": "Enable Satispay Integration"
+  },
+  {
+   "fieldname": "environment_section",
+   "fieldtype": "Section Break",
+   "label": "Environment"
+  },
+  {
+   "default": "Sandbox",
+   "fieldname": "environment",
+   "fieldtype": "Select",
+   "label": "Environment",
+   "options": "Production\nSandbox"
+  },
+  {
+   "fieldname": "credentials_section",
+   "fieldtype": "Section Break",
+   "label": "Credentials"
+  },
+  {
+   "depends_on": "eval:doc.enable_integration",
+   "fieldname": "key_id",
+   "fieldtype": "Data",
+   "label": "Key ID",
+   "mandatory_depends_on": "eval:doc.enable_integration",
+   "reqd": 0
+  },
+  {
+   "depends_on": "eval:doc.enable_integration",
+   "fieldname": "private_key",
+   "fieldtype": "Password",
+   "label": "Private Key (PEM)",
+   "mandatory_depends_on": "eval:doc.enable_integration",
+   "reqd": 0
+  },
+  {
+   "depends_on": "eval:doc.enable_integration",
+   "fieldname": "public_key",
+   "fieldtype": "Text",
+   "label": "Public Key (PEM)",
+   "reqd": 0
+  },
+  {
+   "depends_on": "eval:doc.enable_integration",
+   "description": "Optional token appended to callback URLs for basic verification.",
+   "fieldname": "callback_token",
+   "fieldtype": "Password",
+   "label": "Callback Token"
+  },
+  {
+   "fieldname": "connection_section",
+   "fieldtype": "Section Break",
+   "label": "Connection"
+  },
+  {
+   "default": "10",
+   "fieldname": "request_timeout",
+   "fieldtype": "Int",
+   "label": "Request Timeout (seconds)"
+  },
+  {
+   "default": "0",
+   "description": "When enabled, request/response payloads are logged for troubleshooting.",
+   "fieldname": "log_requests",
+   "fieldtype": "Check",
+   "label": "Log Request/Response Payloads"
+  }
+ ],
+ "field_order": [
+  "integration_section",
+  "enable_integration",
+  "environment_section",
+  "environment",
+  "credentials_section",
+  "key_id",
+  "private_key",
+  "public_key",
+  "callback_token",
+  "connection_section",
+  "request_timeout",
+  "log_requests"
+ ],
+ "issingle": 1,
+ "links": [],
+ "modified": "2025-01-02 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Integration Satispay",
+ "name": "Satispay Settings",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "quick_entry": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}
