@@ -65,4 +65,4 @@ def as_service_user():
 		yield
 	finally:
 		if target and target != original:
-			frappe.set_user(original)
+			frappe.set_user(original or "Guest")
