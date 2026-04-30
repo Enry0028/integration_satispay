@@ -240,8 +240,14 @@ def _ensure_invoice(payment_doc) -> tuple[str | None, str | None]:
 		frappe.throw(_("Missing order payload for Satispay payment."))
 
 	payload = json.loads(payment_doc.payload)
-	with as_service_user():
-		result = frappe.call("pos_core.api.pos.create_pos_invoice", payload=payload)
+	payload["skip_time_slot_validation"] = 1
+	previous_bypass = getattr(frappe.flags, "allow_paid_time_slot_bypass", False)
+	frappe.flags.allow_paid_time_slot_bypass = True
+	try:
+		with as_service_user():
+			result = frappe.call("pos_core.api.pos.create_pos_invoice", payload=payload)
+	finally:
+		frappe.flags.allow_paid_time_slot_bypass = previous_bypass
 
 	invoice_name = result.get("name")
 	if invoice_name:
